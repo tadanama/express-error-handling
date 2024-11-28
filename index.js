@@ -19,4 +19,9 @@ app.get("/", (req, res) => {
 	res.send("I am the homepage");
 });
 
+// Return error if route doesn't not exist
+app.use((req, res, next) => {
+	res.status(404).send("You are lost young one");
+});
+
 app.listen(3000, () => console.log("Listening on port 3000"));
