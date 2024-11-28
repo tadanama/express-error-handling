@@ -14,4 +14,9 @@ app.use((req, res, next) => {
 	//next("saya error"); // This will trigger an error
 });
 
+// Render the homepage
+app.get("/", (req, res) => {
+	res.send("I am the homepage");
+});
+
 app.listen(3000, () => console.log("Listening on port 3000"));
