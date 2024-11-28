@@ -24,4 +24,12 @@ app.use((req, res, next) => {
 	res.status(404).send("You are lost young one");
 });
 
+// This middleware is triggered only when an error happens
+app.use((error, req, res, next) => {
+	console.log("Error handler middleware is triggered");
+	// Error comes from the next callback fuction
+	console.log(error);
+	res.send("Error handler middleware is triggered");
+});
+
 app.listen(3000, () => console.log("Listening on port 3000"));
